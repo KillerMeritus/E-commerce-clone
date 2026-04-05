@@ -7,6 +7,7 @@ import ProductDetails from './pages/ProductDetails'
 import Cart from './pages/Cart'
 import Wishlist from './pages/Wishlist'
 import Checkout from './pages/Checkout'
+import Navbar from './Components/Navbar/Navbar'
 
 function App() {
   useEffect(() => {
@@ -14,16 +15,17 @@ function App() {
   }, [])
 
   return (
-    <Routes>
-      <Route path="/" element={<Home/>}/>
-      <Route path="/products" element={<Products/>}/>
-      <Route path="/products/:id" element={<ProductDetails/>}/>
-      <Route path="/cart" element={<Cart/>}/>
-      <Route path="/wishlist" element={<Wishlist/>}/>
-      <Route path="/checkout" element={<Checkout/>}/>
-    </Routes>
-
-    
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/products" element={<Products/>}/>
+        <Route path="/products/:id" element={<ProductDetails/>}/>
+        <Route path="/cart" element={<Cart/>}/>
+        <Route path="/wishlist" element={<Wishlist/>}/>
+        <Route path="/checkout" element={<Checkout/>}/>
+      </Routes>
+    </>
   )
 }
 
